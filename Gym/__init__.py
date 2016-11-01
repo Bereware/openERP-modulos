@@ -20,4 +20,7 @@
 #    along with this program.  If not, see http://www.gnu.org/licenses/.
 #
 ##############################################################################
+<<<<<<< HEAD
 import gymclass
+=======
+>>>>>>> 2cb7a369ff2cbcdc6daecc14141f18c05fb590fc
