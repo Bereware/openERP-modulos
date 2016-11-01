@@ -32,6 +32,7 @@
     "init_xml": [],
     'update_xml': [],
     'demo_xml': [],
+    'data': ['gymclass_view.xml'],
     'installable': True,
     'active': False,
 #    'certificate': 'certificate',
