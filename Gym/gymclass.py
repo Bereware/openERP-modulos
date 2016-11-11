@@ -1,4 +1,3 @@
-
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
@@ -29,7 +28,12 @@ class gymclass(osv.Model):
     _name = 'gymclass'
     _description = 'Class scheduled in a gym'
     _columns = {
-            'name': fields.char('Class name', size=64, required=True), 'start': fields.datetime('Starts',required=True, autodate = True), 'end': fields.datetime('Ends',required=True, autodate = True), 'capacity': fields.integer("Capacity"),
+            'name': fields.char('Class name', size=64, required=True),
+            'start': fields.datetime('Starts',required=True, autodate = True),
+            'end': fields.datetime('Ends',required=True, autodate = True),
+            'capacity': fields.integer("Capacity"),
+            'gymusers_ids': fields.many2many( 'gymuser','gymuser_gymclass_rel',
+            'gymclass_id', 'gymuser_id', 'Confirmed users'),
             'activityType': fields.selection([
             ('dance','Dance'),
             ('aerobic','Aerobic'),
@@ -37,4 +41,3 @@ class gymclass(osv.Model):
             ('relax','Relax'),
             ],'Type of activity'),
         }
-gymclass()
