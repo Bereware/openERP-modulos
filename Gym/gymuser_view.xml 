@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="act_gymuser" model="ir.actions.act_window">
+            <field name="name">Usuarios</field>
+            <field name="res_model">gymuser</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+        <menuitem name="Usuarios" id="gymusers_submenu" parent="gym" sequence="100"/>
+        <menuitem name="Ver usuarios" id="ver_usuarios_submenu" parent="gymusers_submenu" sequence="110" action="act_gymuser"/>
+    </data>
+</openerp>

@@ -20,20 +20,18 @@
 #    along with this program.  If not, see http://www.gnu.org/licenses/.
 #
 ##############################################################################
-{
-    "name": "Gym",
-    "version": "1.0",
-    "depends": ["base"],
-    "author": "Alvaro",
-    "category": "gym",
-    "description": """
-    This module provide :
-    """,
-    "init_xml": [],
-    'update_xml': [],
-    'demo_xml': [],
-    'data': ['gymclass_view.xml', 'gymuser_view.xml'],
-    'installable': True,
-    'active': False,
-#    'certificate': 'certificate',
-}
+
+from osv import osv
+from osv import fields
+
+class gymuser(osv.Model):
+
+    _name = 'gymuser'
+    _description = 'Usuario de gimnasio.'
+ 
+    _columns = {
+            'name': fields.char('First name', size=60, required=True),
+            'idcard': fields.char('ID Card', size=9, required=True),
+            'photo': fields.binary('Photo')
+        }
+gymuser()
