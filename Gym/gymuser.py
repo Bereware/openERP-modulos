@@ -1,4 +1,3 @@
-
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
@@ -34,4 +33,3 @@ class gymuser(osv.Model):
             'idcard': fields.char('ID Card', size=9, required=True),
             'photo': fields.binary('Photo')
         }
-gymuser()
