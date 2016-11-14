@@ -1,3 +1,4 @@
+
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
@@ -19,23 +20,18 @@
 #    along with this program.  If not, see http://www.gnu.org/licenses/.
 #
 ##############################################################################
+
 from osv import osv
 from osv import fields
 
-class gymclass(osv.Model):
-    _name = 'gymclass'
-    _description = 'Class scheduled in a gym'
+class gyminstructor(osv.Model):
+
+    _name = 'gyminstructor'
+    _description = 'Instructor del gimnasio'
+ 
     _columns = {
-        'name': fields.char('Class name', size=64, required=True),
-        'start': fields.datetime('Starts',required=True, autodate = True),
-        'end': fields.datetime('Ends',required=True, autodate = True),
-        'capacity': fields.integer("Capacity"),
-        'activityType': fields.selection([
-        ('dance','Dance'),
-        ('aerobic','Aerobic'),
-        ('anaerobic','Anaerobic'),
-        ('relax','Relax'),
-        ],'Type of activity'),
-        'gymusers_ids': fields.many2many( 'gymuser','gymuser_gymclass_rel', 'gymclass_id', 'gymuser_id', 'Confirmed users'),
-        'gyminstructor_id': fields.many2one('gyminstructor','Instructor'),
+        'name': fields.char('First name', size=60, required=True), 
+        'idcard': fields.char('ID Card', size=9, required=True), 
+        'photo': fields.binary('Photo'),
+        'gymclass_ids': fields.one2many('gymclass','gyminstructor_id', 'Classes'),
     }

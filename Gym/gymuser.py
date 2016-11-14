@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010-2014 TRESCloud S.A. (http://www.trescloud.com). All Rights Reserved
+#    Copyright (C) 2004-2010 Tiny SPRL (http://tiny.be). All Rights Reserved
 #    
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -26,10 +26,12 @@ from osv import fields
 class gymuser(osv.Model):
 
     _name = 'gymuser'
-    _description = 'Usuario de gimnasio.'
+    _description = 'Usuario del gimnasio'
  
     _columns = {
-            'name': fields.char('First name', size=60, required=True),
-            'idcard': fields.char('ID Card', size=9, required=True),
-            'photo': fields.binary('Photo')
-        }
+        'name': fields.char('First name', size=60, required=True), 
+        'idcard': fields.char('ID Card', size=9, required=True), 
+        'photo': fields.binary('Photo'),
+        'gymclass_ids':fields.many2many('gymclass', 'gymuser_gymclass_rel', 'gymuser_id', 'gymclass_id', 'Gym classes booked') 
+    }
+    

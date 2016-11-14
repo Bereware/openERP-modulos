@@ -1,13 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
+		<record model="ir.ui.view" id="view_gym_gymclass_form">
+			<field name="name">view_gym_gymclass_form</field>
+			<field name="model">gymclass</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Classes">
+					<field name="name" colspan="4" />
+					<field name="start" />
+					<field name="end" />
+					<field name="capacity" />
+					<field name="activityType" />
+					<field name="gyminstructor_id" />
+					<field name="gymusers_ids" colspan="4" />
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="view_gym_tree_view">
+			<field name="name">view_gym_gymclass_tree</field>
+			<field name="model">gymclass</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="name" />
+					<field name="start" />
+					<field name="end" />
+					<field name="capacity" />
+					<field name="activityType" />
+					<field name="gyminstructor_id" />
+					<field name="gymusers_ids" />
+				</tree>
+			</field>
+		</record>
 		<record id="act_gymclass" model="ir.actions.act_window">
-			<field name="name">Gym Classes</field>
+			<field name="name">Clases</field>
 			<field name="res_model">gymclass</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">form</field>
+			<field name="view_mode">form,tree</field>
 		</record>
-		<menuitem id="gym" name="Gym" action="act_gymclass"/>
-		<menuitem name="Classes" id="gymclasses_submenu" parent="gym" sequence="100" action="act_gymclass"/>
+		<menuitem id="gym" name="Gym" action="act_gymclass" />
+		<menuitem name="Clases" id="gymclasses_submenu" parent="gym"
+			sequence="100" />
+		<menuitem name="Ver clases" id="ver_clases_submenu" parent="gymclasses_submenu"
+			sequence="110" action="act_gymclass" />
 	</data>
 </openerp>

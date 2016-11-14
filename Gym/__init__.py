@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010-2014 TRESCloud S.A. (http://www.trescloud.com). All Rights Reserved
+#    Copyright (C) 2004-2010 Tiny SPRL (http://tiny.be). All Rights Reserved
 #    
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -22,4 +22,4 @@
 
 import gymclass
 import gymuser
-
+import gyminstructor

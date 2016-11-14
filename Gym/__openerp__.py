@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010-2014 TRESCloud S.A. (http://www.trescloud.com). All Rights Reserved
+#    Copyright (C) 2004-2010 Tiny SPRL (http://tiny.be). All Rights Reserved
 #    
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -19,20 +19,19 @@
 #    along with this program.  If not, see http://www.gnu.org/licenses/.
 #
 ##############################################################################
+
 {
     "name": "Gym",
     "version": "1.0",
     "depends": ["base"],
-    "author": "Alvaro",
-    "category": "gym",
+    "author": "Carlos",
+    "category": "Gym",
     "description": """
-    This module provide :
+    Gym management
     """,
     "init_xml": [],
-    'update_xml': [],
+    'data': ['gymclass_view.xml','gymuser_view.xml','gyminstructor_view.xml'],
     'demo_xml': [],
-    'data': ["gymclass_view.xml", "gymuser_view.xml"],
     'installable': True,
-    'active': False,
-#    'certificate': 'certificate',
+    'active': False
 }
