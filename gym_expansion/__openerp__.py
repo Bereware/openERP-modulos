@@ -30,7 +30,7 @@
     Gym management
     """,
     "init_xml": [],
-    'data': [],
+    'data': ["gymmaterial_view.xml"],
     'demo_xml': [],
     'installable': True,
     'active': False

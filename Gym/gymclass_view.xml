@@ -7,6 +7,7 @@
 			<field name="type">form</field>
 			<field name="arch" type="xml">
 				<form string="Classes">
+					<h1>Esto es un TEST</h1>
 					<field name="name" colspan="4" />
 					<field name="start" />
 					<field name="end" />
