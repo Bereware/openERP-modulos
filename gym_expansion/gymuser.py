@@ -19,4 +19,12 @@
 #    along with this program.  If not, see http://www.gnu.org/licenses/.
 #
 ##############################################################################
-import gymmaterial
+
+from osv import osv
+from osv import fields
+
+class gymuser(osv.Model):
+    _inherit = 'gymuser'
+    _columns = {
+        'gymmaterial_ids':fields.many2many('gymmaterial','gymuser_gymmaterial_rel', 'gymuser_id','gymmaterial_id', 'Hired Material'),
+}

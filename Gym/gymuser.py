@@ -32,6 +32,5 @@ class gymuser(osv.Model):
         'name': fields.char('First name', size=60, required=True), 
         'idcard': fields.char('ID Card', size=9, required=True), 
         'photo': fields.binary('Photo'),
-        'gymclass_ids':fields.many2many('gymclass', 'gymuser_gymclass_rel', 'gymuser_id', 'gymclass_id', 'Gym classes booked') 
+        'gymmaterial_ids':fields.many2many('gymmaterial','gymuser_gymmaterial_rel', 'gymuser_id','gymmaterial_id', 'Hired Material') 
     }
-    
