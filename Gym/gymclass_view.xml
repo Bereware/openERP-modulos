@@ -62,6 +62,9 @@
 		            <filter string="Capacity >10" domain="[('capacity','&gt;',10)]"/>
 		            <separator orientation="vertical"/>
 		            <field name="gymusers_ids"/>
+		            <group expand="0" string="Agrupar por...">
+					    <filter name="group_by_instructor" string="Instructor" context="{'group_by':'gyminstructor_id'}"/>
+					</group>
 		        </search>
 		    </field>
 		</record>
