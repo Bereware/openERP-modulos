@@ -23,7 +23,7 @@
 {
     "name": "gym_expansion",
     "version": "1.0",
-    "depends": ["gym"],
+    "depends": ["Gym"],
     "author": "Alvaro",
     "category": "Gym",
     "description": """
