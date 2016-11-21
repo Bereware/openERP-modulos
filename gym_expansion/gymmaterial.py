@@ -35,7 +35,7 @@ class gymclass(osv.Model):
         ('others','Others'),
         ],'Type of Material'),
         'gymusers_ids': fields.many2many( 'gymuser','gymuser_material_rel', 'gymmaterial_id', 'gymuser_id', 'Users with hired material.'),
-        'gymclass_ids': fields.many2many( 'gymclass','gymuser_material_rel', 'gymmaterial_id', 'gymclass_id', 'Classes with hired material'),
+        'gymclass_ids': fields.many2many( 'gymclass','gymclass_material_rel', 'gymmaterial_id', 'gymclass_id', 'Classes with hired material'),
     }
     _defaults = {  
         'materialType': "instruments",  
