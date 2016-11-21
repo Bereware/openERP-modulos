@@ -6,36 +6,51 @@
 			<field name="model">gyminstructor</field>
 			<field name="type">form</field>
 			<field name="arch" type="xml">
-				<form string="Classes">
-					<field name="idcard" />
-					<field name="name" />
-					<field name="photo" />
-					<field name="gymclass_ids" colspan="4" />
+				<form string="form_string">
+						<field name="idcard" colspan="4" />
+						<separator />
+						<notebook>
+							<page string="Datos personales">
+								<field name="name" colspan="2" />
+								<field name="photo" nolabel="1" widget="image" colspan="2" />
+							</page>
+							<page string="Clases">
+								<field name="gymclass_ids" colspan="4" nolabel="1">
+									<tree string="tree_string">
+										<field name="name" />
+										<field name="start" />
+										<field name="end" />
+										<field name="capacity" />
+										<field name="activityType" />
+										<field name="gymusers_ids" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
 				</form>
 			</field>
 		</record>
 		<record model="ir.ui.view" id="view_gym_gyminstructor_tree_view">
-                <field name="name">view_gym_gyminstructor_tree</field>
-                <field name="model">gyminstructor</field>
-                <field name="type">tree</field>
-                <field name="arch" type="xml">
-                    <tree string="tree_string">
-                        <field name="idcard" />
-						<field name="name" />
-						<field name="photo" />
-						<field name="gymclass_ids" />
-                    </tree>
-                </field>
-        </record>
+			<field name="name">view_gym_gyminstructor_tree</field>
+			<field name="model">gyminstructor</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="idcard" />
+					<field name="name" />
+					<field name="photo" />
+				</tree>
+			</field>
+		</record>
 		<record id="act_gyminstructor" model="ir.actions.act_window">
 			<field name="name">Instructores</field>
 			<field name="res_model">gyminstructor</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
+			<field name="view_mode">form,tree</field>
 		</record>
 		<menuitem name="Instructores" id="gyminstructor_submenu"
-			parent="gym" sequence="100" />
+			parent="gym" sequence="140" />
 		<menuitem name="Ver instructores" id="ver_instructores_submenu"
-			parent="gyminstructor_submenu" sequence="110" action="act_gyminstructor" />
+			parent="gyminstructor_submenu" sequence="150" action="act_gyminstructor" />
 	</data>
 </openerp>

@@ -6,27 +6,35 @@
 			<field name="model">gymuser</field>
 			<field name="type">form</field>
 			<field name="arch" type="xml">
-				<form string="Classes">
-					<field name="idcard" />
-					<field name="name" />
-					<field name="photo" />
-					<field name="gymclass_ids" colspan="4" />
+				<form string="form_string">
+					<group colspan="2">
+						<field name="idcard" />
+						<field name="name" />
+					</group>
+					<field name="photo" nolabel="1" widget="image" colspan="2" />
+					<field name="gymclass_ids">
+						<tree>
+							<field name="name" />
+							<field name="start" />
+							<field name="end" />
+						</tree>
+					</field>
 				</form>
 			</field>
 		</record>
 		<record model="ir.ui.view" id="view_gym_gymuser_tree_view">
-                <field name="name">view_gym_gymuser_tree</field>
-                <field name="model">gymuser</field>
-                <field name="type">tree</field>
-                <field name="arch" type="xml">
-                    <tree string="tree_string">
-                        <field name="idcard" />
-						<field name="name" />
-						<field name="photo" />
-						<field name="gymclass_ids" />
-                    </tree>
-                </field>
-        </record>
+			<field name="name">view_gym_gymuser_tree</field>
+			<field name="model">gymuser</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="idcard" />
+					<field name="name" />
+					<field name="photo" />
+					<field name="gymclass_ids" />
+				</tree>
+			</field>
+		</record>
 		<record id="act_gymuser" model="ir.actions.act_window">
 			<field name="name">Usuarios</field>
 			<field name="res_model">gymuser</field>

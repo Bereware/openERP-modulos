@@ -13,7 +13,12 @@
 					<field name="capacity" />
 					<field name="activityType" />
 					<field name="gyminstructor_id" />
-					<field name="gymusers_ids" colspan="4" />
+					<field name="gymusers_ids" colspan="4" mode="tree" nolabel="1">
+						<tree>
+							<field name="name" />
+							<field name="idcard" />
+						</tree>
+					</field>
 				</form>
 			</field>
 		</record>
@@ -41,8 +46,8 @@
 		</record>
 		<menuitem id="gym" name="Gym" action="act_gymclass" />
 		<menuitem name="Clases" id="gymclasses_submenu" parent="gym"
-			sequence="100" />
+			sequence="120" />
 		<menuitem name="Ver clases" id="ver_clases_submenu" parent="gymclasses_submenu"
-			sequence="110" action="act_gymclass" />
+			sequence="130" action="act_gymclass" />
 	</data>
 </openerp>
