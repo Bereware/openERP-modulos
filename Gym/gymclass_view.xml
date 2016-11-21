@@ -52,11 +52,26 @@
 		    </field>
 		</record>
 		
+		<!-- Category Search View-->
+		<record model="ir.ui.view" id="view_gym_gymclass_search">
+		    <field name="name">view_gym_gymclass_search</field>
+		    <field name="model">gymclass</field>
+		    <field name="type">search</field>
+		    <field name="arch" type="xml">
+		        <search string="Classes">
+		            <filter string="Capacity >10" domain="[('capacity','&gt;',10)]"/>
+		            <separator orientation="vertical"/>
+		            <field name="gymusers_ids"/>
+		        </search>
+		    </field>
+		</record>
+		
 		<record id="act_gymclass" model="ir.actions.act_window">
 			<field name="name">Clases</field>
 			<field name="res_model">gymclass</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">form,tree,calendar</field>
+			<field name="search_view_id" ref="view_gym_gymclass_search"/>
 		</record>
 		<menuitem id="gym" name="Gym" action="act_gymclass" />
 		<menuitem name="Clases" id="gymclasses_submenu" parent="gym"
